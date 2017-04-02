@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grid Gallery - Free Bulma template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" id="bulma" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/grid.css">
+
+  </head>
+
+<body style="background-color:#00d1b2;">
+
+    <nav class="nav has-shadow">
+        <div class="container">
+            <div class="nav-left"> </div>
+            <div class="nav-center">
+              <img src="image/map.png" alt="" style="width:40px; height:40px; margin-top:13px; margin-right:5px">
+              <img src="image/jaab3.png" alt="" >
+              </div>
+            <div class="nav-right nav-menu" > </div>
+        </div>
+    </nav>
+    <div class="contianer">
+
+    <div class="columns">
+
+        <div class="column is-12" style="margin-top:30px; text-align:left;">
+          <div class="columns is-mobile">
+
+              <div class="column is-12" style="text-align:center;" >
+
+                <input class="input is-medium" id="txtPlaces" type="text" placeholder="กรอกสถานที่ที่คุณต้องการค้นหา" style="width:500px" >
+
+            <br>
+                <span class="select is-medium" style="margin-top:20px">
+                <select id="menu" >
+                  <option value="">ทั้งหมด</option>
+                  <option value="zoo">สวนสัตว์</option>
+                  <option value="restaurant">ร้านอาหาร</option>
+                  <option value="car_repair">ร้านซ่อมรถ</option>
+                  <option value="pharmacy">ร้านขายยา</option>
+                  <option value="bank">ธนาคาร</option>
+                  <option value="airport">สนามบิน</option>
+                  <option value="convenience_store">ร้านสะดวกซื้อ</option>
+                  <option value="gas_station">ปั้มน้ำมัน</option>
+                  <option value="lodging">ที่พัก</option>
+                  <option value="police">สถานีตำรวจ</option>
+                  <option value="post_office">ที่ทำการไปรษณีย์</option>
+                  <option value="atm">เอทีเอ็ม</option>
+                  <option value="amusement_park">สวนสนุก</option>
+                  <option value="bus_station">ป้ายรถเมล์</option>
+                  <option value="department_store">ห้างสรรพสินค้า</option>
+                </select>
+              </span>
+
+
+
+                </div>
+
+           </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container is-fluid">
+    <div class="columns">
+        <div class="column is-7" id="myhead">
+
+        </div>
+        <div class="column is-5">
+         <div id="map_canvas" style="width:100%; height:600px;"></div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p> <strong>Powered</strong> by <a href="http://www.facebook.com/bank.aekawan">Aekawan Klapson (Bank) SE 5730213083</a>. Project for SOA</p>
+
+            </div>
+        </div>
+    </footer>
+    <script
+    src="https://code.jquery.com/jquery-3.2.0.min.js"
+    integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I="
+    crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCjM8Af5v9UDqiKhnTeQz-MZVh_4qpjVQ&libraries=places&callback=" ></script>
+    <script type="text/javascript" src="js/app.js?version=4"></script>
+
+</body>
+
+</html>

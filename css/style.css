@@ -1,0 +1,44 @@
+body {
+	background: #bbaa95;
+}
+
+.main {
+	background: #fff;
+}
+
+.title-div {
+	margin-bottom: 40px;
+}
+
+.location-list {
+	text-align: center;
+}
+
+.location-list-item {
+	margin: 0 10px 10px 0;
+	padding: 10px;
+	background: #eee;
+	cursor: pointer;
+	transition: all .1s ease-in;
+}
+
+.location-list-item:hover {
+	background: #92D8FF;
+}
+
+.ig-div {
+	display: inline-block;
+	width:50%;
+}
+
+.ig-div img{
+	width:100%;
+	padding: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+	.ig-div {
+		display: inline-block;
+		width:20%;
+	}
+}

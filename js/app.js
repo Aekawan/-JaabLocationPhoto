@@ -25,11 +25,11 @@ initMap(lat,long);//แสดงแผนที่
 
 function initMap(lat,long) {
 
-	var mlat = lat;
-	var mlong = long;
+	var lat = lat;
+	var long = long;
 
 var mapsGoo = google.maps;
-var Position = new mapsGoo.LatLng(mlat,mlong);//ละติจูด,ลองติจูด เริ่มต้น โดยผมให้เริ่มต้นที่ กรุงเตบ
+var Position = new mapsGoo.LatLng(lat,long);//ละติจูด,ลองติจูด เริ่มต้น โดยผมให้เริ่มต้นที่ กรุงเตบ
 var myOptions = {
 		center:Position,//ตำแหน่งแสดงแผนที่เริ่มต้น
  scrollwheel: false,
@@ -50,11 +50,10 @@ marker.setMap(map);//แสดงตัวปักหมุดโลด!!
 //ตรวจจับเหตุการณ์ต่างๆ ที่เกิดใน google maps
 mapsGoo.event.addListener(marker, 'dragend', function(ev) {//ย้ายหมุด
  var location =ev.latLng;
- mlat = location.lat();
- mlong = location.lng();
+ var mlat = location.lat();
+ var mlong = location.lng();
  myMaps_locat(mlat,mlong );
  $('#myhead').html('');
-
  var service = new google.maps.places.PlacesService(map);
  service.nearbySearch({
  	location: {lat:mlat ,lng:mlong},
@@ -80,7 +79,7 @@ $('#menu').change(function() {
 	$('#myhead').html('');
 	var service = new google.maps.places.PlacesService(map);
 	service.nearbySearch({
-		location: {lat:mlat ,lng:mlong},
+		location: Position,
 		radius: 1000,
 		types:[typeplace]
 	}, callback);
@@ -112,8 +111,8 @@ function callback(results, status) {
 		 console.log(results[i]);
 
 		 $('#myhead').append('<div class="columns" id="mydata'+i+'"></div>');
-
-		  for (let j = 1; j < 5; j++) {
+      var j;
+		  for (j = 0; j < 4; j++) {
 				try {
 
 					var photo = results[j+check].photos[0].getUrl({'maxWidth': 400, 'maxHeight': 400});
@@ -127,9 +126,13 @@ function callback(results, status) {
 
 
 				} catch (e) {
+         //if(j==0){
+				 //j = j+1
+				 //}else if(j>0){
+					 //j = j-1;
+				 //}
 
-
-					$('#mydata'+i).append('<div class=\"column is-3\"><div class=\"card\"><header class=\"card-header\"><p class=\"card-header-title\">@'+titlename+'</p></header><div class=\"card-image\"><figure class=\"image is-4by3\"> <img id=\"img1\" src=\"http://www.crescendobuffalo.com/Common/images/jquery/galleria/image-not-found.png\" alt=\"Image\"></figure></div></div></div>');
+			   $('#mydata'+i).append('<div class=\"column is-3\"><div class=\"card\"><header class=\"card-header\"><p class=\"card-header-title\">@'+titlename+'</p></header><div class=\"card-image\"><figure class=\"image is-4by3\"> <img id=\"img1\" src=\"http://www.crescendobuffalo.com/Common/images/jquery/galleria/image-not-found.png\" alt=\"Image\"></figure></div></div></div>');
 
 
 				}
